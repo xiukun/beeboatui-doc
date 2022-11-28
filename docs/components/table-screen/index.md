@@ -4,16 +4,28 @@
 
 ## 基础用法
 
-基础的搜索栏用法。
+基础的搜索栏用法，支持展开/折叠、查询、重置。
 
-:::demo 支持展开/折叠、查询、重置
+:::demo
 
 ```vue
 <template>
     <div>
-        <bt-table-screen :is-btn-show="true" v-on:submit="onSubmit">
+        <bt-table-screen
+            :is-btn-show="true"
+            @submit="onSubmit"
+            @reset="onReset"
+        >
             <bt-table-screen-item label="审批单号">
                 <el-input
+                    v-model="searchItem.order"
+                    clearable
+                    placeholder="请输入"
+                />
+            </bt-table-screen-item>
+            <bt-table-screen-item label="审批人">
+                <el-input
+                    v-model="searchItem.name"
                     clearable
                     placeholder="请输入"
                 />
@@ -23,17 +35,32 @@
 </template>
 
 <script setup lang="ts">
-console.log(1111)
-    function onSubmit(val) {
-        console.log(val,'search submit..')
-    }
+import { ref, reactive } from 'vue'
+
+// 搜索项
+const searchItem = reactive({ 
+    order: '123456',
+    name: '张三' 
+})
+// 普通搜索
+const onSubmit = (val = { data: [], type: 0 }) => {
+    console.log(val, 'search submit..')
+}
+// 重置
+const onReset = () => {
+    Object.keys(searchItem).forEach(key => {
+        searchItem[key] = undefined
+    })
+    onSubmit()
+}
 </script>
 
 <style>
-.ever-table-screen__item--content{
-    width:160px;
+.ever-table-screen__item--content {
+    width: 160px;
 }
 </style>
+
 ```
 
 :::
