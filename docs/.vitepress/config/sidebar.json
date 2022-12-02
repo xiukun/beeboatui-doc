@@ -29,14 +29,29 @@
             ]
         },
         {
+            "text": "主题",
+            "items": [
+                { "text": "bee-theme 主题", "link": "/components/bee-theme/" }
+            ]
+        },
+        {
             "text": "通用",
             "items": [
                 { "text": "Button 按钮", "link": "/components/button/" },
                 { "text": "Splitter 容器", "link": "/components/splitter/" },
                 { "text": "Table 组件", "link": "/components/table/" },
-                { "text": "Search 组件", "link": "/components/table-screen/" }
+                { "text": "Search 组件", "link": "/components/table-screen/" },
+                { "text": "Icon 组件", "link": "/components/icon/" },
+                { "text": "SvgIcon 组件", "link": "/components/svg-icon/" },
+                { "text": "Label 组件", "link": "/components/label/" },
+                { "text": "Slot 组件", "link": "/components/slot/" }
             ]
         },
-        { "text": "布局", "items": [] }
+        {
+            "text": "其他",
+            "items": [
+                { "text": "captcha 验证码", "link": "/components/captcha/" }
+            ]
+        }
     ]
 }

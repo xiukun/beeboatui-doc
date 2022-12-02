@@ -4,8 +4,10 @@ import Demo from 'vitepress-theme-demoblock/dist/client/components/Demo.vue'
 import DemoBlock from 'vitepress-theme-demoblock/dist/client/components/DemoBlock.vue'
 
 import InputDemo from '../components/input/demo.vue'
+import BeeThemeDemo from '../components/bee-theme-demo/index.vue'
 export function useComponents(app) {
-  app.component('Demo', Demo)
-  app.component('DemoBlock', DemoBlock)
-  app.component('InputDemo', InputDemo)
+    app.component('Demo', Demo)
+    app.component('DemoBlock', DemoBlock)
+    app.component('InputDemo', InputDemo)
+    app.component('BeeThemeDemo', BeeThemeDemo)
 }
